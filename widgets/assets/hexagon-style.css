@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#zeroHexGrid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+  overflow: visible;
+  font-family: sans-serif;
+  list-style-type: none;
+  overflow: hidden;
+}
+
+.zeroHexLi {
+  position: relative;
+  visibility: hidden;
+  outline: 1px solid transparent;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: all 0.3s;
+}
+.zeroHexLi::after {
+  content: "";
+  display: block;
+  padding-bottom: 86.602%;
+}
+.zeroHexDiv {
+  position: absolute;
+  width: 96%;
+  padding-bottom: 110.851%;
+  /* margin: 2%; */
+  overflow: hidden;
+  visibility: hidden;
+  outline: 1px solid transparent;
+  -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+  transition: all 0.3s;
+}
+.zeroHexDiv * {
+  position: absolute;
+  visibility: visible;
+  outline: 1px solid transparent;
+}
+.zeroHexLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+  -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+  transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+}
+.zeroHexLink p {
+  position: relative;
+  color: var(--text-color);
+  transition: all 0.3s;
+  opacity: var(--opacity);
+}
+
+.zeroHexDiv:hover .zeroHexLink p {
+  color: var(--hover-text-color);
+  opacity: var(--hover-opacity) !important;
+}
+.zeroHexLi zeroHexImg {
+  left: -100%;
+  right: -100%;
+  width: auto;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.zeroHexLi h1,
+.zeroHexLi p {
+  width: 100%;
+  padding: 5%;
+  box-sizing: border-box;
+  font-weight: 300;
+  /* opacity: var(--opacity); */
+}
+/* .zeroHexDiv:hover .zeroHexLi h1,
+.zeroHexDiv:hover .zeroHexLi p {
+  opacity: var(--hover-opacity);
+} */
+
+.zeroHexLi p {
+  text-transform: capitalize;
+  text-align: center;
+  /* bottom: 40%;
+  padding-top: 50%; */
+  font-size: 1.5em;
+  z-index: 1;
+}
+.zeroHexLi h1:before,
+.zeroHexLi h1:after {
+  display: inline-block;
+  margin: 0 0.5em;
+  width: 0.25em;
+  height: 0.03em;
+  background: #fff;
+  content: "";
+  vertical-align: middle;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+#zeroHexText2 {
+  top: 70%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.zeroHexImg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-position: center center;
+  background-size: cover;
+  overflow: hidden;
+  background-color: var(--background-color);
+  -webkit-clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.zeroHexImg:before {
+  background-color: var(--background-color);
+  opacity: var(--opacity);
+}
+
+.zeroHexDiv:hover .zeroHexImg:before {
+  background-color: var(--hover-background-color);
+  opacity: var(--hover-opacity) !important;
+}
+
+.zeroHexImg:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  transition: opacity 0.3s;
+}
+@media (min-width: 1201px) {
+  #zeroHexGrid {
+    padding-bottom: 4.4%;
+  }
+  .zeroHexLi {
+    width: 20%;
+  }
+  .zeroHexLi:nth-child(9n + 6) {
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  #zeroHexGrid {
+    padding-bottom: 5.5%;
+    font-size: 13px;
+  }
+  .zeroHexLi {
+    width: 25%;
+  }
+  .zeroHexLi:nth-child(7n + 5) {
+    margin-left: 12.5%;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 601px) {
+  #zeroHexGrid {
+    padding-bottom: 7.4%;
+    font-size: 14px;
+  }
+  .zeroHexLi {
+    width: 33.333%;
+  }
+  .zeroHexLi:nth-child(5n + 4) {
+    margin-left: 16.666%;
+  }
+}
+
+@media (max-width: 600px) {
+  #zeroHexGrid {
+    padding-bottom: 11.2%;
+    font-size: 12px;
+  }
+  .zeroHexLi {
+    width: 50%;
+  }
+  .zeroHexLi:nth-child(3n + 3) {
+    margin-left: 25%;
+  }
+}
+
+@media (max-width: 400px) {
+  #zeroHexGrid {
+    font-size: 8px;
+  }
+}
+
+.hexagon-container {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  -webkit-clip-path: polygon(
+    50% 0%,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0% 75%,
+    0% 25%
+  );
+}
